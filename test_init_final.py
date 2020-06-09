@@ -2543,8 +2543,8 @@ while True:
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
 							hello = hello[:hello.find('  ')]
-						else:
-							bossData[i][6] = ''
+						#else:
+							#bossData[i][6] = ''
 							
 						tmp_msg = '!킬' + bossData[i][0]
 						if len(hello) > len(tmp_msg) + 3 :
@@ -2599,8 +2599,8 @@ while True:
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
 							hello = hello[:hello.find('  ')]
-						else:
-							bossData[i][6] = ''
+						#else:
+							#bossData[i][6] = ''
 							
 						tmp_msg = '!멍 '+bossData[i][0]
 						tmp_now = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
@@ -2670,8 +2670,8 @@ while True:
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
 							hello = hello[:hello.find('  ')]
-						else:
-							bossData[i][6] = ''
+						#else:
+							#bossData[i][6] = ''
 							
 						tmp_msg = '!예상 ' + bossData[i][0]
 						if len(hello) > len(tmp_msg) + 3 :

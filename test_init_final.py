@@ -714,7 +714,6 @@ async def dbSave():
 							information1 += ' - ' + bossData[i][0] +  ' / ' + bossData[i][7] +  '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + bossTimeString[i] + ' @ ' + bossDateString[i] + ' (멍 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + '\n'
 					
 	try :
-		print("ABCDEF DB저장 스타트!22")	
 		contents = repo.get_contents("my_bot.db")
 		repo.update_file(contents.path, "bossDB", information1, contents.sha)
 	except GithubException as e :
@@ -836,7 +835,6 @@ async def initkill_list():
 	
 	kill_Data = []
 	try :
-		print("ABCDEF 킬초기화 스타트!")
 		contents = repo.get_contents("kill_list.ini")
 		repo.update_file(contents.path, "kill list", '-----척살명단-----', contents.sha)
 		print ('<킬리스트 초기화>')
@@ -857,7 +855,6 @@ async def kill_list_Save():
 			output_kill_list += str(kill_Data[i][0]) + ' ' + str(kill_Data[i][1]) + '\n'
 
 	try :
-		print("ABCDEF 킬목록저장 스타트2222!")
 		contents = repo.get_contents("kill_list.ini")
 		repo.update_file(contents.path, "kill list", output_kill_list, contents.sha)
 	except GithubException as e :
@@ -1440,11 +1437,9 @@ while True:
 			inputData_restart = file_data_restart.split('\n')
 
 			if len(inputData_restart) < 3:	
-				print("ABCDEF 재시작 가즈아1>" )
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_0", "restart\nrestart\nrestrat\n", contents12.sha)
 			else:
-				print("ABCDEF 재시작 가즈아2>" )
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_1", "", contents12.sha)
 		else:
@@ -1880,17 +1875,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?1!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?1!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?2!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?2!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?3!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?3!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?4!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?4!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
@@ -2055,17 +2050,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?1!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?1!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?2!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?2!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?3!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?3!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?4!" + tmp_bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?4!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			###########################고정보스출력

@@ -2646,7 +2646,7 @@ while True:
 									temptime = temptime + deltaTime
 									bossMungCnt[i] = bossMungCnt[i] + 1
 
-							if bossData[i][8] != ''
+							if bossData[i][8] != '' :
 								bossData[i][8] = tmp_now
 
 							tmp_bossTime[i] = bossTime[i] = temptime				

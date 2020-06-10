@@ -2052,7 +2052,7 @@ while True:
 							if ouput_bossData[i][5] == 0 :
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기!" + tmp_bossTime[[i][1])
+								print("ABCDEF 보탐 여기!" + tmp_bossTime[i][1])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			###########################고정보스출력

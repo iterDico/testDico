@@ -1849,7 +1849,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])                            #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
-					aa.append(bossTimeString[i])                         #output_bossData[8] : 이전킬시간
+					aa.append(bossData[i][8])                            #output_bossData[8] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -1876,17 +1876,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?1!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기일반?1!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?2!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기일반?2!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?3!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기일반?3!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?4!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기일반?4!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
@@ -2015,7 +2015,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
-					aa.append(bossTimeString[i])	                     #output_bossData[8] : 이전킬시간
+					aa.append(bossData[i][8])	                         #output_bossData[8] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2052,17 +2052,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?1!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기고정?1!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?2!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기고정?2!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?3!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기고정?3!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?4!" + ouput_bossData[i][8])
+								print("ABCDEF 보탐 여기고정?4!" + bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			###########################고정보스출력
@@ -2597,6 +2597,7 @@ while True:
 						else :
 							now2 = now2 + datetime.timedelta(hours = int(bossData[i][1]), minutes = int(bossData[i][5]))
 
+						bossData[i][8] = tmp_now
 						tmp_bossTime[i] = bossTime[i] = nextTime = now2
 						tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 						tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
@@ -2644,6 +2645,9 @@ while True:
 								while temptime < tmp_now :
 									temptime = temptime + deltaTime
 									bossMungCnt[i] = bossMungCnt[i] + 1
+
+							if bossData[i][8] != ''
+								bossData[i][8] = tmp_now
 
 							tmp_bossTime[i] = bossTime[i] = temptime				
 

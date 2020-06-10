@@ -706,8 +706,9 @@ async def dbSave():
 						information1 += ' - ' + bossData[i][0] + ' / ' + bossData[i][7] +  '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' * ' + '\n<' + bossData[i][6] + '>' + '\n'
 					else:
 						information1 += ' - ' + bossData[i][0] + ' / ' + bossData[i][7] +  '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' * ' + '\n<' + bossData[i][6] + '>' + '\n'
-print("ABCDEF DB저장 스타트!22")						
+					
 	try :
+		print("ABCDEF DB저장 스타트!22")	
 		contents = repo.get_contents("my_bot.db")
 		repo.update_file(contents.path, "bossDB", information1, contents.sha)
 	except GithubException as e :
@@ -828,8 +829,8 @@ async def initkill_list():
 	global kill_Data
 	
 	kill_Data = []
-	print("ABCDEF 킬초기화 스타트!")
 	try :
+		print("ABCDEF 킬초기화 스타트!")
 		contents = repo.get_contents("kill_list.ini")
 		repo.update_file(contents.path, "kill list", '-----척살명단-----', contents.sha)
 		print ('<킬리스트 초기화>')
@@ -848,8 +849,9 @@ async def kill_list_Save():
 	for i in range(len(kill_Data)):
 		if kill_Data[i][0] != '':
 			output_kill_list += str(kill_Data[i][0]) + ' ' + str(kill_Data[i][1]) + '\n'
-print("ABCDEF 킬목록저장 스타트2222!")
+
 	try :
+		print("ABCDEF 킬목록저장 스타트2222!")
 		contents = repo.get_contents("kill_list.ini")
 		repo.update_file(contents.path, "kill list", output_kill_list, contents.sha)
 	except GithubException as e :

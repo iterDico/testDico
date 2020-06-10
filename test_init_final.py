@@ -2049,7 +2049,7 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?1!" + tmp_bossTime[i].strftime('%H:%M:%S')
+								print("ABCDEF 보탐 여기고정?1!" + tmp_bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
 								print("ABCDEF 보탐 여기고정?2!" + tmp_bossTime[i].strftime('%H:%M:%S'))

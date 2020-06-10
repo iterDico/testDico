@@ -1432,11 +1432,13 @@ while True:
 			file_data_restart = base64.b64decode(inidata_restart.content)
 			file_data_restart = file_data_restart.decode('utf-8')
 			inputData_restart = file_data_restart.split('\n')
-print("ABCDEF 재시작 가즈아>" + (inputData_restart))
+
 			if len(inputData_restart) < 3:	
+				print("ABCDEF 재시작 가즈아1>" + (inputData_restart))
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_0", "restart\nrestart\nrestrat\n", contents12.sha)
 			else:
+				print("ABCDEF 재시작 가즈아2>" + (inputData_restart))
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_1", "", contents12.sha)
 		else:

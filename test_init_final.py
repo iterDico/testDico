@@ -697,7 +697,6 @@ async def dbSave():
 	datelist1 = bossTime
 	
 	datelist = list(set(datelist1))
-print("ABCDEF DB저장 스타트!11")
 	information1 = '----- 보스탐 정보 -----\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):

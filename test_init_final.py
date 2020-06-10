@@ -680,7 +680,6 @@ async def dbSave():
 	global bossDateString
 	global bossMungFlag
 	global bossMungCnt
-print("ABCDEF DB저장 스타트!")
 	for i in range(bossNum):
 		for j in range(bossNum):
 			if bossTimeString[i] and bossTimeString[j] != '99:99:99':
@@ -845,7 +844,7 @@ async def initkill_list():
 #킬목록저장
 async def kill_list_Save():
 	global kill_Data
-print("ABCDEF 킬목록저장 스타트 1111!")
+
 	output_kill_list = '-----척살명단-----\n'
 	for i in range(len(kill_Data)):
 		if kill_Data[i][0] != '':

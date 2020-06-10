@@ -1434,11 +1434,11 @@ while True:
 			inputData_restart = file_data_restart.split('\n')
 
 			if len(inputData_restart) < 3:	
-				print("ABCDEF 재시작 가즈아1>" + (inputData_restart))
+				print("ABCDEF 재시작 가즈아1>" )
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_0", "restart\nrestart\nrestrat\n", contents12.sha)
 			else:
-				print("ABCDEF 재시작 가즈아2>" + (inputData_restart))
+				print("ABCDEF 재시작 가즈아2>" )
 				contents12 = repo_restart.get_contents("restart.txt")
 				repo_restart.update_file(contents12.path, "restart_1", "", contents12.sha)
 		else:

@@ -1849,6 +1849,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])                            #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
+					aa.append(bossTimeString[i])                         #output_bossData[8] : 이전킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -1875,17 +1876,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?1!" + bossTimeString[i])
+								print("ABCDEF 보탐 여기일반?1!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?2!" + bossTimeString[i])
+								print("ABCDEF 보탐 여기일반?2!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?3!" + bossTimeString[i])
+								print("ABCDEF 보탐 여기일반?3!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?4!" + bossTimeString[i])
+								print("ABCDEF 보탐 여기일반?4!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
@@ -2014,6 +2015,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
+					aa.append(bossTimeString[i])	                     #output_bossData[8] : 이전킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2050,17 +2052,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?1!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?1!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?2!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?2!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기고정?3!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?3!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?4!" + bossTimeString[i])
+								print("ABCDEF 보탐 여기고정?4!" + ouput_bossData[i][8])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			###########################고정보스출력

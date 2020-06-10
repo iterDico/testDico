@@ -1875,17 +1875,17 @@ while True:
 					if timestring == ouput_bossData[i][1]:
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?1!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?1!" + bossTimeString[i])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?2!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?2!" + bossTimeString[i])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								print("ABCDEF 보탐 여기일반?3!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?3!" + bossTimeString[i])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기일반?4!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기일반?4!" + bossTimeString[i])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
@@ -2060,7 +2060,7 @@ while True:
 								print("ABCDEF 보탐 여기고정?3!" + bossTime[i].strftime('%H:%M:%S'))
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 							else :
-								print("ABCDEF 보탐 여기고정?4!" + bossTime[i].strftime('%H:%M:%S'))
+								print("ABCDEF 보탐 여기고정?4!" + bossTimeString[i])
 								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n'
 
 			###########################고정보스출력

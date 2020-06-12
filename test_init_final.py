@@ -2641,7 +2641,7 @@ while True:
 									bossMungCnt[i] = bossMungCnt[i] + 1
 
 							#멍처리저장
-							if bossData[i][8] and bossData[[i][8] == '99:99:99':
+							if bossData[i][8] and bossData[i][8] == '99:99:99':
 								bossData[i][8] = tmp_now
 
 							tmp_bossTime[i] = bossTime[i] = temptime				

@@ -313,7 +313,7 @@ def init():
 		f.append(tmp_bossData[j][1][tmp_len+1:])  #bossData[5] : 분
 		f.append('')                              #bossData[6] : 메세지
 		f.append(tmp_bossData[j][5][13:])         #bossData[7] : 보스위치
-		f.append('')         					  #bossData[8] : 순서
+		f.append('')         					  #bossData[8] : 자리
 		bossData.append(f)
 		f = []
 		bossTime.append(datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0])))
@@ -1850,7 +1850,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])                            #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
-					aa.append(bossData[i][8])                            #output_bossData[8] : 순서
+					aa.append(bossData[i][8])                            #output_bossData[8] : 자리
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2016,7 +2016,7 @@ while True:
 					aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
-					aa.append(bossData[i][8])	                         #output_bossData[8] : 순서
+					aa.append(bossData[i][8])	                         #output_bossData[8] : 자리
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2754,19 +2754,19 @@ while True:
 						bossData[i][6] = ''
 						await client.get_channel(channel).send('< ' + bossData[i][0] + ' / ' + bossData[i][7] + ' 메모삭제 완료>', tts=False)
 
-					################ 보스별 위치 ################ 
+					################ 보스별 자리 ################ 
 
-					if message.content.startswith('!위치 ' + bossData[i][0] +' '):
+					if message.content.startswith('!자리 ' + bossData[i][0] +' '):
 
-						tmp_msg ='!위치 ' + bossData[i][0] +' '
+						tmp_msg ='!자리 ' + bossData[i][0] +' '
 						
 						bossData[i][8] = hello[len(tmp_msg):]
-						await client.get_channel(channel).send('< ' + bossData[i][0] + ' / ' + bossData[i][7] + ' [ ' + bossData[i][8] + ' ] 위치등록 완료>', tts=False)
+						await client.get_channel(channel).send('< ' + bossData[i][0] + ' / ' + bossData[i][7] + ' [ ' + bossData[i][8] + ' ] 자리등록 완료>', tts=False)
 						
-					if message.content.startswith('!위치삭제 '+ bossData[i][0]):
+					if message.content.startswith('!자리삭제 '+ bossData[i][0]):
 						
 						bossData[i][8] = ''
-						await client.get_channel(channel).send('< ' + bossData[i][0] + ' / ' + bossData[i][7] + ' 위치삭제 완료>', tts=False)
+						await client.get_channel(channel).send('< ' + bossData[i][0] + ' / ' + bossData[i][7] + ' 자리삭제 완료>', tts=False)
 
 		await client.process_commands(ori_msg)
 

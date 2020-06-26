@@ -292,7 +292,7 @@ def init():
 	for i in range(fixed_bossNum):
 		tmp_fixed_bossData.append(fixed_inputData[i*6:i*6+6]) 
 		
-	#print (tmp_bossData)
+	print (tmp_bossData)
 		
 	for j in range(bossNum):
 		for i in range(len(tmp_bossData[j])):
@@ -314,6 +314,7 @@ def init():
 		f.append('')                              #bossData[6] : 메세지
 		f.append(tmp_bossData[j][5][13:])         #bossData[7] : 보스위치
 		f.append('')         					  #bossData[8] : 자리
+		f.append('99:99:99')         			  #bossData[9] : 킬시간
 		bossData.append(f)
 		f = []
 		bossTime.append(datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0])))
@@ -545,9 +546,9 @@ async def task():
 						if bossFlag0[i] == False:
 							bossFlag0[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```'  + bossData[i][8] , tts=False)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```" + bossData[i][8], tts=False)
 							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림1.mp3')
 
 				################ before_alert ################
@@ -556,9 +557,9 @@ async def task():
 						if bossFlag[i] == False:
 							bossFlag[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' / ' + bossData[i][7] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' / ' + bossData[i][7] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```' + bossData[i][8], tts=False)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' / ' + bossData[i][7] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' / ' + bossData[i][7] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```" + bossData[i][8], tts=False)
 							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림.mp3')
 
 				################ 보스 젠 시간 확인 ################ 
@@ -707,14 +708,14 @@ async def dbSave():
 				if bossTimeString[i] != '99:99:99' or bossMungFlag[i] == True :
 					if bossMungFlag[i] == True :
 						if bossData[i][2] == '0' :
-							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' (미입력 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + '\n'
+							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' (미입력 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + bossData[i][8] + '\n'
 						else : 
-							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' (멍 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + '\n'
+							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + tmp_bossTime[i].strftime('%H:%M:%S') + ' @ ' + tmp_bossTime[i].strftime('%Y-%m-%d') + ' (멍 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + bossData[i][8] + '\n'
 					else:
 						if bossData[i][2] == '0' :
-							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + bossTimeString[i] + ' @ ' + bossDateString[i] + ' (미입력 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + '\n'
+							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + bossTimeString[i] + ' @ ' + bossDateString[i] + ' (미입력 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + bossData[i][8] + '\n'
 						else : 
-							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + bossTimeString[i] + ' @ ' + bossDateString[i] + ' (멍 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + '\n'
+							information1 += ' - ' + bossData[i][0] + '(' + bossData[i][1] + '.' + bossData[i][5] + ') : ' + bossTimeString[i] + ' @ ' + bossDateString[i] + ' (멍 ' + str(bossMungCnt[i]) + '회)' + ' * ' + bossData[i][6] + bossData[i][8] + '\n'
 						
 	try :
 		contents = repo.get_contents("my_bot.db")
@@ -1855,6 +1856,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
 					aa.append(bossData[i][8])                            #output_bossData[8] : 자리
+					aa.append(bossData[i][9])                            #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -1879,16 +1881,18 @@ while True:
 					cnt += 1
 				for i in range(len(ouput_bossData)):
 					if timestring == ouput_bossData[i][1]:
+						if output_bossData[i][9] == '99:99:99'
+							output_bossData[i][9] = ouput_bossData[i][2]
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
 				###########################
 				if len(boss_information[0]) != 0:
@@ -2016,6 +2020,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
 					aa.append(bossData[i][8])	                         #output_bossData[8] : 자리
+					aa.append(bossData[i][9])                            #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2050,16 +2055,19 @@ while True:
 					cnt += 1
 				for i in range(len(ouput_bossData)):
 					if timestring == ouput_bossData[i][1]:
+						if output_bossData[i][9] == '99:99:99'
+							output_bossData[i][9] = ouput_bossData[i][2]
+
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 			###########################고정보스출력
 			if len(fixedboss_information[0]) != 0:
 				fixedboss_information[0] = "```diff\n" + fixedboss_information[0] + "\n```"
@@ -2546,7 +2554,7 @@ while True:
 				hello = message.content
 
 				for i in range(bossNum):
-					################ 보스 컷처리 ################ 
+					################ 보스 킬처리 ################ 
 					if message.content.startswith('!킬'+ bossData[i][0]) or message.content.startswith('!'+convertToInitialLetters('킬'+bossData[i][0])) or message.content.startswith('!킬 '+bossData[i][0]) or message.content.startswith('!'+convertToInitialLetters('킬 '+bossData[i][0])):
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
@@ -2591,7 +2599,8 @@ while True:
 							bossMungCnt[i] = bossMungCnt[i] - 1
 						else :
 							now2 = now2 + datetime.timedelta(hours = int(bossData[i][1]), minutes = int(bossData[i][5]))
-									
+
+						bossData[i][8] = tmp_now
 						tmp_bossTime[i] = bossTime[i] = nextTime = now2
 						tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 						tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
@@ -2640,6 +2649,9 @@ while True:
 									temptime = temptime + deltaTime
 									bossMungCnt[i] = bossMungCnt[i] + 1
 
+							if bossData[i][8] == '99:99:99' :
+								bossData[i][8] = temptime
+
 							tmp_bossTime[i] = bossTime[i] = temptime				
 
 							tmp_bossTimeString[i] = bossTimeString[i] = temptime.strftime('%H:%M:%S')
@@ -2659,6 +2671,9 @@ while True:
 								bossMungFlag[i] = False
 								bossMungCnt[i] = bossMungCnt[i] + 1
 
+							if bossData[i][8] == '99:99:99' :
+								bossData[i][8] = tmp_now
+								
 								tmp_bossTime[i] = bossTime[i] = nextTime				
 
 								tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
@@ -2705,6 +2720,9 @@ while True:
 
 							if tmp_now < now2 :
 								tmp_now = tmp_now + datetime.timedelta(days=int(1))
+
+							if bossData[i][8] == '99:99:99' :
+								bossData[i][8] = tmp_now
 
 							tmp_bossTime[i] = bossTime[i] = nextTime = tmp_now
 							tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')

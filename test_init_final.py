@@ -1881,7 +1881,7 @@ while True:
 					cnt += 1
 				for i in range(len(ouput_bossData)):
 					if timestring == ouput_bossData[i][1]:
-						if output_bossData[i][9] == '99:99:99'
+						if output_bossData[i][9] == '99:99:99' :
 							output_bossData[i][9] = ouput_bossData[i][2]
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
@@ -2055,7 +2055,7 @@ while True:
 					cnt += 1
 				for i in range(len(ouput_bossData)):
 					if timestring == ouput_bossData[i][1]:
-						if output_bossData[i][9] == '99:99:99'
+						if output_bossData[i][9] == '99:99:99' :
 							output_bossData[i][9] = ouput_bossData[i][2]
 
 						if ouput_bossData[i][4] == '0' :

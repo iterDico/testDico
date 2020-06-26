@@ -2684,7 +2684,7 @@ while True:
 										)
 								await client.get_channel(channel).send(embed=embed, tts=False)
 							else:
-								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직'+tmp_bossTime[i]+' 안됐습니다.'+tmp_now+' 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
 
 						
 				################ 예상 보스 타임 입력 ################ 

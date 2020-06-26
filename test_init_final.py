@@ -2670,10 +2670,7 @@ while True:
 								bossFlag0[i] = False
 								bossMungFlag[i] = False
 								bossMungCnt[i] = bossMungCnt[i] + 1
-
-							if bossData[i][9] == '99:99:99' :
-								bossData[i][9] = tmp_now
-								
+					
 								tmp_bossTime[i] = bossTime[i] = nextTime				
 
 								tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
@@ -2684,7 +2681,7 @@ while True:
 										)
 								await client.get_channel(channel).send(embed=embed, tts=False)
 							else:
-								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직'+tmp_bossTime[i].strftime('%H:%M:%S')+' 안됐습니다.'+tmp_now+' 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
 
 						
 				################ 예상 보스 타임 입력 ################ 

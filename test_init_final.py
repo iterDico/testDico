@@ -1856,7 +1856,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
 					aa.append(bossData[i][8])                            #output_bossData[8] : 자리
-					aa.append(bossData[i][9])                            #output_bossData[9] : 킬시간
+					aa.append(bossData[i][9].strftime('%H:%M:%S'))       #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2020,7 +2020,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
 					aa.append(bossData[i][8])	                         #output_bossData[8] : 자리
-					aa.append(bossData[i][9])                            #output_bossData[9] : 킬시간
+					aa.append(bossData[i][9].strftime('%H:%M:%S'))       #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 

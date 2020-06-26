@@ -1856,7 +1856,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])                            #output_bossData[7] : 위치
 					aa.append(bossData[i][8])                            #output_bossData[8] : 자리
-					aa.append(bossData[i][9].strftime('%H:%M:%S'))       #output_bossData[9] : 킬시간
+					aa.append("99:99:99")       					     #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -1885,14 +1885,14 @@ while True:
 							ouput_bossData[i][9] = ouput_bossData[i][2]
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + ouput_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' +  ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 			if len(boss_information) == 1 and len(tmp_boss_information) == 1:
 				###########################
 				if len(boss_information[0]) != 0:
@@ -2020,7 +2020,7 @@ while True:
 					aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 					aa.append(bossData[i][7])	                         #output_bossData[7] : 위치
 					aa.append(bossData[i][8])	                         #output_bossData[8] : 자리
-					aa.append(bossData[i][9].strftime('%H:%M:%S'))       #output_bossData[9] : 킬시간
+					aa.append("99:99:99")       					     #output_bossData[9] : 킬시간
 					ouput_bossData.append(aa)
 					aa = []
 
@@ -2060,14 +2060,14 @@ while True:
 
 						if ouput_bossData[i][4] == '0' :
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 						else : 
 							if ouput_bossData[i][5] == 0 :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 							else :
-								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9] + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
+								boss_information[cnt] = boss_information[cnt] + ouput_bossData[i][3] + ' ' + output_bossData[i][9].strftime('%H:%M:%S') + ' > [' + ouput_bossData[i][2] + '] : ' + ouput_bossData[i][0] + ' / ' + ouput_bossData[i][7] + '\n --->  ' + ouput_bossData[i][6] + '\n --->  ( ' + ouput_bossData[i][8] + ' ) \n'
 			###########################고정보스출력
 			if len(fixedboss_information[0]) != 0:
 				fixedboss_information[0] = "```diff\n" + fixedboss_information[0] + "\n```"
@@ -2684,7 +2684,7 @@ while True:
 										)
 								await client.get_channel(channel).send(embed=embed, tts=False)
 							else:
-								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직'+tmp_bossTime[i]+' 안됐습니다.'+tmp_now+' 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+								await client.get_channel(channel).send('```' + bossData[i][0] + ' / ' + bossData[i][7] + '탐이 아직'+tmp_bossTime[i].strftime('%H:%M:%S')+' 안됐습니다.'+tmp_now+' 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
 
 						
 				################ 예상 보스 타임 입력 ################ 

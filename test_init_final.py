@@ -314,7 +314,7 @@ def init():
 		f.append('')                              #bossData[6] : 메세지
 		f.append(tmp_bossData[j][5][13:])         #bossData[7] : 보스위치
 		f.append('')         					  #bossData[8] : 자리
-		f.append('99:99:99')         			  #bossData[9] : 킬시간
+		f.append(datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0])))  #bossData[9] : 킬시간
 		bossData.append(f)
 		f = []
 		bossTime.append(datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0])))
